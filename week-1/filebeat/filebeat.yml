@@ -1,0 +1,8 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /home/ubuntu/input.file
+
+output.logstash:
+  hosts: ["localhost:5044"]
