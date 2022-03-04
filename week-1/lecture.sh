@@ -21,6 +21,18 @@ cp aws-based-data-engineering/week-1/logstash/logstash-config-* logstash-7.16.2/
 ./logstash-7.16.2/bin/logstash -f config/logstash-config-file.conf
 ./logstash-7.16.2/bin/logstash -f config/logstash-config-filter.conf
 
+#######
+
+cd ~/aws-based-data-engineering/week-1/logstash
+~/logstash-7.16.2/bin/logstash -f logstash-config-filebeat.conf
+
+cd ~/aws-based-data-engineering/week-1/filebeat
+chmod go-w filebeat.yml
+~/filebeat-7.16.2-linux-x86_64/filebeat run -e filebeat.yml
+
+
+for ((i=0; ;i+=1 )); do echo $i >> input.file;sleep 1; done
+######
 
 sudo apt update
 sudo apt install openjdk-11-jdk
