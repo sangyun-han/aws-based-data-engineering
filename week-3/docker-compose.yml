@@ -113,12 +113,16 @@ services:
   
   producer_host:
     image: confluentinc/cp-kafka:5.5.1
-    restart: always
+    restart: on-failure
     hostname: producer_host
     container_name: producer_host
+    command: ["/bin/bash"]
+    tty: true
   
   consumer_host:
     image: confluentinc/cp-kafka:5.5.1
-    restart: always
+    restart: on-failure
     hostname: consumer_host
     container_name: consumer_host
+    command: ["/bin/bash"]
+    tty: true
