@@ -120,5 +120,5 @@ services:
   consumer_host:
     image: confluentinc/cp-kafka:5.5.1
     restart: always
-    hostname: producer_host
-    container_name: producer_host
+    hostname: consumer_host
+    container_name: consumer_host
